@@ -2,14 +2,13 @@
     "name": "venveo/craft-boilerplate",
     "description": "Craft CMS Boilerplate for spinning up new projects.",
     "keywords": [
-        "craft", "craftcms", "boilerplate", "craft craftboilerplate", "craft boilerplate"
+        "craft", "craftcms", "boilerplate", "craftboilerplate", "craft boilerplate"
     ],
     "license": "MIT",
     "require": {
         "php": ">=5.5.9|7.0.0",
         "vlucas/phpdotenv": "^2.0",
-        "illuminate/support": "^5.1",
-        "venveo/craft-elixir": "^1.0"
+        "illuminate/support": "5.1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
