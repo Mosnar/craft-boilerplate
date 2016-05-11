@@ -6,7 +6,7 @@ return [
     'allowAutoUpdates' => getenv('APP_ALLOW_UPDATES'),
 
     // backup db on update
-    'backupDbOnUpdate' => getenv('APP_BACKUP_DB_ON_UPDATE'),
+    'backupDbOnUpdate' => getenv('APP_BACKUP_ON_UPDATE'),
 
     // cache method
     'cacheMethod' => getenv('APP_CACHE_METHOD'),
