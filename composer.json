@@ -6,11 +6,16 @@
     ],
     "license": "MIT",
     "require": {
-        "php": ">=5.6.21|7.0.6",
-        "vlucas/phpdotenv": "^2.0"
+        "php": "7.0.6",
+        "ext-mbstring": "*",
+        "ext-mcrypt": "*",
+        "ext-imagick": "*",
+        "ext-redis": "*"
     },
     "require-dev": {
+        "vlucas/phpdotenv": "^2.0",
         "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
         "phpspec/phpspec": "~2.1"
     },

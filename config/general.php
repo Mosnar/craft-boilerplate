@@ -1,26 +1,64 @@
 <?php
 
-return [
+// these items are shared between environments
+$shared = [
+    // general options
 
-    // allow updates
-    'allowAutoUpdates' => getenv('APP_ALLOW_UPDATES'),
 
-    // backup db on update
-    'backupDbOnUpdate' => getenv('APP_BACKUP_ON_UPDATE'),
+    // template options
+    'errorTemplatePrefix' => "_errors/",
 
-    // cache method
-    'cacheMethod' => getenv('APP_CACHE_METHOD'),
-
-    // environment specific info
-    'environmentVariables' => [
-        'basePath' => getenv('APP_BASE_PATH'),
-        'siteUrl' => getenv('APP_SITE_URL')
-    ],
-
-    // Prevent index.php in urls
-    'omitScriptNameInUrls' => getenv('APP_OMIT_SCRIPT'),
-
-    // Default image quality for image transforms
-    'defaultImageQuality' => getenv('APP_IMAGE_QUALITY')
-
+    // user options
+    'useEmailAsUsername' => true
 ];
+
+// if the instance is local
+if (getenv('APP_ENV') == 'local') {
+
+    // merge shared with local
+    return array_merge($shared, [
+        // general options
+        'devMode' => true,
+
+        // caching options
+        'enableTemplateCaching' => false,
+
+        // user options
+        'testToEmailAddress' => 'you@domain.com',
+
+    ]);
+}
+
+// assume we are in staging/production
+
+return array_merge($shared, [
+
+    // general options
+    'cacheMethod' => 'redis',
+    'devMode' => false,
+    'environmentVariables' => [
+        'baseAssetUrl'  => getenv('APP_URL'),
+        // 'baseAssetPath' => './',
+    ],
+    'sendPoweredByHeader' => false,
+    'siteName' => getenv('APP_NAME'),
+    'siteUrl' => getenv('APP_URL'),
+
+    // security options
+    'enableCsrfProtection' => true,
+    'validationKey' => getenv('APP_KEY'),
+
+    // updates
+    'allowAutoUpdates' => false,
+    'backupDbOnUpdate' => false,
+    'restoreDbOnUpdateFailure' => false,
+
+    // urls
+    'addTrailingSlashesToUrls' => true,
+    'cpTrigger' => getenv('APP_CPTRIGGER'),
+    'omitScriptNameInUrls' => true,
+
+    // assets
+    'imageDriver' => 'imagick'
+
+]);
