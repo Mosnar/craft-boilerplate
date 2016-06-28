@@ -3,6 +3,7 @@
 // these items are shared between environments
 $shared = [
     // general options
+    'siteName' => getenv('APP_NAME'),
 
 
     // template options
@@ -41,7 +42,6 @@ return array_merge($shared, [
         // 'baseAssetPath' => './',
     ],
     'sendPoweredByHeader' => false,
-    'siteName' => getenv('APP_NAME'),
     'siteUrl' => getenv('APP_URL'),
 
     // security options
