@@ -5,6 +5,7 @@ class ExampleTest extends BaseTest
     /** @test */
     public function example_test()
     {
-        $this->assertTrue(true);
+        $this->visit('/')
+            ->see('App Name');
     }
 }

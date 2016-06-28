@@ -1,9 +1,8 @@
 <?php
 
-class BaseTest extends \PHPUnit_Framework_TestCase
+class BaseTest extends \PHPUnit_Extensions_Selenium2TestCase
 {
-
-    protected $baseUrl = 'http://craft.dev';
+    protected $baseUrl = 'http://localhost';
 
     protected function setUp()
     {
