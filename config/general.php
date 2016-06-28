@@ -4,7 +4,7 @@
 $shared = [
     // general options
     'siteName' => getenv('APP_NAME'),
-
+    'sendPoweredByHeader' => false,
 
     // template options
     'errorTemplatePrefix' => "_errors/",
@@ -41,7 +41,6 @@ return array_merge($shared, [
         'baseAssetUrl'  => getenv('APP_URL'),
         // 'baseAssetPath' => './',
     ],
-    'sendPoweredByHeader' => false,
     'siteUrl' => getenv('APP_URL'),
 
     // security options

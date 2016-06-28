@@ -6,7 +6,7 @@ Start your next project faster with some sensible defaults. This boilerplate is 
 
 - [Composer](https://getcomposer.org)
 - [NPM](https://www.npmjs.com)
-- [PHP 5.6+](http://php.net)
+- [PHP 7.0+](http://php.net)
 
 ## Whats Included
 
@@ -14,6 +14,14 @@ Start your next project faster with some sensible defaults. This boilerplate is 
 - PHPDotEnv
 - Laravel Elixir
 - Heroku configuration
+
+## TL;DR
+
+Install this as your starting point with the following command:
+
+```
+composer create-project venveo/craft-boilerplate --stability dev new-project
+```
 
 ### Structure
 
@@ -36,12 +44,9 @@ While we love how easy [Craft can support multiple environments](TODO link), we 
 
 The following environment variables are set:
 
-- `APP_ALLOW_UPDATES=true`
-- `APP_BACKUP_ON_UPDATE=true`
-- `APP_CACHE_METHOD=file`
-- `APP_OMIT_SCRIPTNAME=true`
-- `APP_DEFAULT_IMAGE_QUALITY=80`
-
+- `APP_ENV=local`
+- `APP_URL=http://localhost`
+- `APP_NAME=Application Name`
 
 - `DB_HOST=localhost`
 - `DB_NAME=dev_projectname`
@@ -57,7 +62,7 @@ _*Note:* That also means that we need a smart way to use Laravel Elixir in Craft
 
 ### Heroku Ready!
 
-Heroku is our platform of choice, so the project ships with a [`Procfile`](https://github.com/venveo/craft-boilerplate/Procfile) and an [`nginx.conf`](https://github.com/venveo/craft-boilerplate/nginx.conf) file that suits most projects.
+Heroku is our platform of choice, so the project ships with a [`Procfile`](https://github.com/venveo/craft-boilerplate/Procfile) that suits most projects.
 
 Since the application filesystem for Heroku is ephemeral (non-persistent) we also `composer install` our Craft [Sarge](https://github.com/venveo/craft-sarge) plugin, this plugin has one simple task, bark orders at any application errors to ensure they use StdErr instead of logging to a text file.
 
