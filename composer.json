@@ -10,7 +10,8 @@
         "ext-mbstring": "*",
         "ext-mcrypt": "*",
         "ext-imagick": "*",
-        "ext-redis": "*"
+        "ext-redis": "*",
+        "ext-memcached": "*"
     },
     "require-dev": {
         "vlucas/phpdotenv": "^2.0",
