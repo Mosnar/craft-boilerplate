@@ -28,7 +28,7 @@
     "scripts": {
         "post-root-package-install": [
             "php -r \"copy('.env.example', '.env');\"",
-            "./install_craft.sh"
+            "bash ./install_craft.sh"
         ],
         "post-create-project-cmd": []
     },
