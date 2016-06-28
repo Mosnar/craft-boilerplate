@@ -1,5 +1,6 @@
 {
     "name": "venveo/craft-boilerplate",
+    "type": "project",
     "description": "Craft CMS Boilerplate for spinning up new projects.",
     "keywords": [
         "craft", "craftcms", "boilerplate", "craftboilerplate", "craft boilerplate"
@@ -28,5 +29,6 @@
     },
     "config": {
         "preferred-install": "dist"
-    }
+    },
+    "minimum-stability": "dev"
 }
