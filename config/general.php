@@ -19,6 +19,7 @@ if (getenv('APP_ENV') == 'local') {
     // merge shared with local
     return array_merge($shared, [
         // general options
+        'cacheMethod' => 'redis',
         'devMode' => true,
 
         // caching options
@@ -35,7 +36,6 @@ if (getenv('APP_ENV') == 'local') {
 return array_merge($shared, [
 
     // general options
-    'cacheMethod' => 'redis',
     'devMode' => false,
     'environmentVariables' => [
         'baseAssetUrl'  => getenv('APP_URL'),
