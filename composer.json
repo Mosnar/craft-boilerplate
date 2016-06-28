@@ -29,7 +29,7 @@
         "post-root-package-install": [
             "php -r \"copy('.env.example', '.env');\"",
             "bash ./install.sh",
-            "bash rm ./install.sh"
+            "rm ./install.sh"
         ],
         "post-create-project-cmd": []
     },
