@@ -6,13 +6,16 @@
         "craft", "craftcms", "boilerplate", "craftboilerplate", "craft boilerplate"
     ],
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/venveo/craft-boilerplate/issues",
+        "source": "https://github.com/venveo/craft-boilerplate"
+    },
     "require": {
         "php": "7.0.6",
         "ext-mbstring": "*",
         "ext-mcrypt": "*",
         "ext-imagick": "*",
-        "ext-redis": "*",
-        "ext-memcached": "*"
+        "ext-redis": "*"
     },
     "require-dev": {
         "vlucas/phpdotenv": "^2.0",
