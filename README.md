@@ -14,13 +14,14 @@ Start your next project faster with some sensible defaults. This boilerplate is 
 - PHPDotEnv
 - Laravel Elixir
 - Heroku configuration
+- Docker Environment
 
 ## TL;DR
 
 Install this as your starting point with the following command:
 
 ```
-composer create-project venveo/craft-boilerplate --stability dev new-project
+composer create-project venveo/craft-boilerplate --ignore-platform-reqs new-project-name
 ```
 
 ### Structure
