@@ -25,8 +25,7 @@ if (getenv('APP_ENV') == 'local') {
         'enableTemplateCaching' => false,
 
         // user options
-        'testToEmailAddress' => 'you@domain.com',
-
+        'testToEmailAddress' => 'you@domain.com'
     ]);
 }
 
@@ -59,5 +58,4 @@ return array_merge($shared, [
 
     // assets
     'imageDriver' => 'imagick'
-
 ]);
