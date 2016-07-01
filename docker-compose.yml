@@ -1,0 +1,37 @@
+version: '2'
+services:
+
+    web:
+        image: venveo/craftcms:5.5
+        restart: always
+        ports:
+            - "8000:80"
+        depends_on:
+            - mysql
+        links:
+            - mysql
+        volumes:
+            - ./craft/app:/var/www/craft/app/:rw
+            - ./craft/config:/var/www/craft/config/:rw
+            - ./craft/plugins:/var/www/craft/plugins/:rw
+            - ./craft/storage:/var/www/craft/storage/:rw
+            - ./craft/templates:/var/www/craft/templates/:rw
+            - ./craft/translations:/var/www/craft/translations/:rw
+            - ./public:/var/www/html:ro
+        environment:
+            - ALLOW_OVERRIDE=true
+
+    mysql:
+        image: mysql:5.5.50
+        container_name: mysql-server
+        restart: always
+        ports:
+            - "3306:3306"
+        volumes:
+            - "/app/data:/var/lib/mysql"
+        environment:
+            MYSQL_ROOT_PASSWORD: SuperLongPassword!
+            MYSQL_DATABASE: dev_craftcms
+            MYSQL_PASSWORD: Password1!
+            MYSQL_USER: craftcms
+            MYSQL_ALLOW_EMPTY_PASSWORD: "no"
