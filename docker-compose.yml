@@ -11,7 +11,7 @@ services:
         links:
             - mysql
         volumes:
-            - .:/var/www/:rw
+            - .:/var/www:rw
             - ./public:/var/www/html:ro
         env_file: .env
 
