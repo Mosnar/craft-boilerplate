@@ -15,7 +15,6 @@ $shared = [
 
 // if the instance is local
 if (getenv('APP_ENV') == 'local') {
-
     // merge shared with local
     return array_merge($shared, [
         // general options
@@ -32,7 +31,6 @@ if (getenv('APP_ENV') == 'local') {
 // assume we are in staging/production
 
 return array_merge($shared, [
-
     // general options
     'cacheMethod' => 'redis',
     'devMode' => false,
