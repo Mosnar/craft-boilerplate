@@ -11,7 +11,7 @@
         "source": "https://github.com/venveo/craft-boilerplate"
     },
     "require": {
-        "php": "~7.0.6",
+        "php": "~5.5.9|~7.0.6",
         "ext-mbstring": "*",
         "ext-mcrypt": "*",
         "ext-imagick": "*",
