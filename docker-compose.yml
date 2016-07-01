@@ -17,12 +17,11 @@ services:
 
     mysql:
         image: mysql:5.5.50
-        container_name: mysql-server
         restart: always
         ports:
             - "3306:3306"
         volumes:
-            - "/app/data:/var/lib/mysql"
+            - "./storage/database:/var/lib/mysql"
         environment:
             MYSQL_ROOT_PASSWORD: SuperLongPassword!
             MYSQL_DATABASE: dev_craftcms
