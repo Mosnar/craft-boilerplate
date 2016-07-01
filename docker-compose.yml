@@ -11,15 +11,9 @@ services:
         links:
             - mysql
         volumes:
-            - ./craft/app:/var/www/craft/app/:rw
-            - ./craft/config:/var/www/craft/config/:rw
-            - ./craft/plugins:/var/www/craft/plugins/:rw
-            - ./craft/storage:/var/www/craft/storage/:rw
-            - ./craft/templates:/var/www/craft/templates/:rw
-            - ./craft/translations:/var/www/craft/translations/:rw
+            - .:/var/www/:rw
             - ./public:/var/www/html:ro
-        environment:
-            - ALLOW_OVERRIDE=true
+        env_file: .env
 
     mysql:
         image: mysql:5.5.50
