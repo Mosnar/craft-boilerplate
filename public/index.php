@@ -3,9 +3,6 @@
 // Path to your craft/ folder
 $craftPath = '../';
 
-// Do not edit below this line
-$path = rtrim($craftPath, '/').'/app/index.php';
-
 // if this is a local instance
 if (getenv('APP_ENV') == 'local') {
     require_once('../vendor/autoload.php');
@@ -18,6 +15,9 @@ if (getenv('APP_ENV') == 'local') {
         exit('Could not load environment.');
     }
 }
+
+// Do not edit below this line
+$path = rtrim($craftPath, '/').'/app/index.php';
 
 // define the path the the templates
 define('CRAFT_TEMPLATES_PATH', '../resources/templates/');
