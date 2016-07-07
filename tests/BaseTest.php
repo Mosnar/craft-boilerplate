@@ -53,4 +53,16 @@ class BaseTest extends \PHPUnit_Extensions_Selenium2TestCase
         $this->assertNotContains($text, $content);
         return $this;
     }
+    
+    protected function fill($field, $value)
+    {
+        $this->byName($field)->value($value);
+        return $this;
+    }
+    
+    protected function submit($form)
+    {
+        $this->byId($form)->submit();
+        return $this;
+    }
 }
