@@ -3,7 +3,6 @@ services:
 
     web:
         image: venveo/craftcms:5.5
-        restart: always
         ports:
             - "8000:80"
         depends_on:
@@ -17,7 +16,6 @@ services:
 
     mysql:
         image: mysql:5.5.50
-        restart: always
         ports:
             - "3306:3306"
         volumes:
