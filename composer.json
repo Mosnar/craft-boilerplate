@@ -41,7 +41,9 @@
     "minimum-stability": "dev",
     "extra": {
         "installer-paths": {
-            "plugins/{$name}": ["vendor/package"]
+            "plugins/{$name}": [
+                "vendor/package"
+            ]
         }
     }
 }
