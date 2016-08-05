@@ -48,6 +48,7 @@ The following environment variables are set:
 - `APP_ENV=local`
 - `APP_URL=http://localhost`
 - `APP_NAME=Application Name`
+- `APP_CPTRIGGER=admin`
 
 - `DB_HOST=localhost`
 - `DB_NAME=dev_projectname`
