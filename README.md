@@ -48,6 +48,7 @@ The following environment variables are set:
 - `APP_ENV=local`
 - `APP_URL=http://localhost`
 - `APP_NAME=Application Name`
+- `APP_CPTRIGGER=admin`
 
 - `DB_HOST=localhost`
 - `DB_NAME=dev_projectname`
@@ -79,7 +80,7 @@ Open terminal and enter the following command:
 
 `craft new my-cool-website`
 
-[Magic...](funny gif) Now go build something awesome!
+[Magic...](http://i.giphy.com/qJxFuXXWpkdEI.gif) Now go build something awesome!
 
 _*Note:* Detailed documentation on the Craft Installer can be found [here](https://github.com/venveo/craft-installer/README.md)._
 
