@@ -16,7 +16,8 @@
         "ext-mcrypt": "*",
         "ext-imagick": "*",
         "ext-redis": "*",
-        "ext-memcached": "*"
+        "ext-memcached": "*",
+        "venveo/craft-elixir": "^1.0.0"
     },
     "require-dev": {
         "vlucas/phpdotenv": "^2.0",
@@ -37,5 +38,10 @@
     "config": {
         "preferred-install": "dist"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "extra": {
+        "installer-paths": {
+            "plugins/{$name}": ["vendor/package"]
+        }
+    }
 }
