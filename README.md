@@ -66,9 +66,8 @@ _*Note:* That also means that we need a smart way to use Laravel Elixir in Craft
 
 Heroku is our platform of choice, so the project ships with a [`Procfile`](https://github.com/venveo/craft-boilerplate/Procfile) that suits most projects.
 
-Since the application filesystem for Heroku is ephemeral (non-persistent) we also `composer install` our Craft [Sarge](https://github.com/venveo/craft-sarge) plugin, this plugin has one simple task, bark orders at any application errors to ensure they use StdErr instead of logging to a text file.
 
-_*Note:* We understand that not all projects may choose Heroku over something like Digital Ocean and Server Pilot (we heart that option as well) so you can simply remove or ignore those two files._
+_*Note:* We understand that not all projects may choose Heroku over something like Digital Ocean and ServerPilot (we heart that option as well) so you can simply remove or ignore those two files._
 
 ## Installation and Setup
 
