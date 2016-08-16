@@ -24,6 +24,9 @@ Install this as your starting point with the following command:
 composer create-project venveo/craft-boilerplate --ignore-platform-reqs new-project-name
 ```
 
+> _Note_: When using `composer` to install dependencies, you may run into the following error: "Your requirements could not be resolved to an installable set of packages." Run `composer install --ignore-platform-reqs` to install regardless of your platforms PHP version.
+
+
 ### Structure
 
 Out of the box, this project comes prepared with an expanded folder structure, which simply means not the `craft/{subfolders}` and `public/index.php`.
@@ -37,7 +40,7 @@ Instead the structure looks like this:
 - `resources`
 - `storage`
 
-_*Note:* the `templates` directory is located under `resources`._
+> _Note_: the `templates` directory is located under `resources`.
 
 ### PHPDotEnv Support
 
@@ -49,6 +52,7 @@ The following environment variables are set:
 - `APP_URL=http://localhost`
 - `APP_NAME=Application Name`
 - `APP_CPTRIGGER=admin`
+- `APP_KEY=64charstring`
 
 - `DB_HOST=localhost`
 - `DB_NAME=dev_projectname`
@@ -56,22 +60,24 @@ The following environment variables are set:
 - `DB_PASSWORD=secret`
 - `DB_PREFIX=craft`
 
+> _Note_: The `DB_*` environment variables are only required when developing locally. The `APP_*` variables should be set on all environments.
+
 ### Laravel Elixir/Gulp
 
 Part of our workflow includes setting up a [`gulpfile.js`](https://github.com/venveo/craft-boilerplate/gulpfile.js) so this project has a simple Laravel Elixir configuration ready to rock.
 
-_*Note:* That also means that we need a smart way to use Laravel Elixir in Craft templates. So we also `composer install` our Craft [Elixir](https://github.com/venveo/craft-elixir) plugin to speed things up._
+> _Note_: That also means that we need a smart way to use Laravel Elixir in Craft templates. So we also `composer install` our Craft [Elixir](https://github.com/venveo/craft-elixir) plugin to speed things up.
 
 ### Heroku Ready!
 
 Heroku is our platform of choice, so the project ships with a [`Procfile`](https://github.com/venveo/craft-boilerplate/Procfile) that suits most projects.
 
 
-_*Note:* We understand that not all projects may choose Heroku over something like Digital Ocean and ServerPilot (we heart that option as well) so you can simply remove or ignore those two files._
+> _Note_: We understand that not all projects may choose Heroku over something like Digital Ocean and ServerPilot (we heart that option as well) so you can simply remove or ignore those two files.
 
 ## Installation and Setup
 
-The most convenient way to install is using our [Craft CMS Installer](https://github.com/venveo/craft-installer) which will allow you to install Craft from the command line using our boilerplate or a plain Craft installation.
+The most convenient way to install is using our [Craft CMS Installer](https://github.com/venveo/craft-installer) (WIP) which will allow you to install Craft from the command line using our boilerplate or a plain Craft installation.
 
 ### Craft Installer
 
@@ -81,7 +87,7 @@ Open terminal and enter the following command:
 
 [Magic...](http://i.giphy.com/qJxFuXXWpkdEI.gif) Now go build something awesome!
 
-_*Note:* Detailed documentation on the Craft Installer can be found [here](https://github.com/venveo/craft-installer/README.md)._
+> _Note_: Detailed documentation on the Craft Installer can be found [here](https://github.com/venveo/craft-installer/README.md). Which is still a work in progress, for now.
 
 ### Manual Installation
 
@@ -89,8 +95,7 @@ If you prefer not to use the command line installer but wish to use this boilerp
 
 1. Download the zip of this project from the master branch
 2. Rename/move the directory to match your project name (e.g `my-cool-website`) and location
-3. Download the latest version of [Craft CMS](https://craftcms.com)
-4. Unzip Craft and move the directory `craft/app` into the root of your new project so the `app` folder should be located in the root of the project (e.g `my-cool-website/app`)
+3. Download the latest version of [Craft CMS](https://craftcms.com) using the `install.sh` shell script
 5. Copy `.env.example` to `.env` and update to meet your system configuration
 6. *Optional:* If you plan to use Elixir, download our Craft [Elixir](https://github.com/venveo/craft-elixir) plugin
 
