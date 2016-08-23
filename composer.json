@@ -42,6 +42,7 @@
     "extra": {
         "installer-paths": {
             "plugins/{$name}": [
+                "type:craft-plugin",
                 "vendor/package"
             ]
         }
