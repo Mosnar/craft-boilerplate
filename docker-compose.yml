@@ -7,8 +7,10 @@ services:
             - "80:80"
         depends_on:
             - mysql-server
+            - redis-server
         links:
             - mysql-server
+            - redis-server
         volumes:
             - ".:/var/www"
         env_file: .env
@@ -25,3 +27,8 @@ services:
             MYSQL_PASSWORD: Password1!
             MYSQL_USER: craftcms
             MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+    
+    redis-server:
+        image: "venveo/baseimage:3.2-redis"
+        ports:
+            - "6379:6379"
