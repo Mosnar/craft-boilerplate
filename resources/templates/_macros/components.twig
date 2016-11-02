@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>{{ siteName }}</title>
-        <link rel="stylesheet" href="{{ craft.elixir.version('css/all.css') }}">
-    </head>
-    <body>
-
-        <script src="{{ craft.elixir.version('js/app.js') }}"></script>
-    </body>
-</html>
+{% macro article(entry) %}
+    <article>
+        <h1>{{ entry.title }}</h1>
+        {{ entry.}}
+    </article>
+{% endmacro %}
