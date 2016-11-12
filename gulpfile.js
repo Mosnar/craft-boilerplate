@@ -1,15 +1,15 @@
-var elixir = require('laravel-elixir')
-    gulp = require('gulp')
-    connect = require('gulp-connect-php')
-    browserSync = require('browser-sync');
+var elixir = require('laravel-elixir'),
+gulp = require('gulp'),
+connect = require('gulp-connect-php'),
+browserSync = require('browser-sync');
 
 // var includePaths = [
 //     "bower_components/foundation-sites/scss",
 //     "bower_components/motion-ui/src"
 // ];
 
-elixir(function(mix) {
-   // compile sass
+elixir(function (mix) {
+    // compile sass
     // mix.sass('app.scss', null, {
     //     includePaths
     // })
@@ -35,17 +35,17 @@ elixir(function(mix) {
 });
 
 // create a local 
-gulp.task("static", function() {
+gulp.task("static", function () {
     // create the server
     connect.server({
-        port: 3000,
-        base: 'resources/static'
-    },
-    function() {
-        browserSync({
-            proxy: '127.0.0.1:3000'        
-        })
-    });
+            port: 3000,
+            base: 'resources/static'
+        },
+        function () {
+            browserSync({
+                proxy: '127.0.0.1:3000'
+            })
+        });
 
     // listen for any changes
     gulp.watch('resources/static/**/*.html').on('change', function () {
