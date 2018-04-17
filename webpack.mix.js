@@ -1,16 +1,15 @@
 let mix = require('laravel-mix')
 
-mix.webpackConfig({
-    externals: {
-        'jquery': 'Vue',
-        'vue-router': 'VueRouter',
-        'vuex': 'Vuex',
-        'axios': 'axios'
-    }
-});
-
 const sourcePath = 'resources/assets';
 const distPath = 'web/assets';
+
+mix.extract([
+        'jquery'
+    ])
+    .autoload({
+        jquery: ['$', 'window.jQuery',"jQuery","window.$","jquery","window.jquery"]
+    });
+
 
 mix.setPublicPath(distPath);
 
@@ -66,15 +65,15 @@ if (mix.inProduction()) {
 
 mix.browserSync({
     open: false,
-    proxy: 'web',
+    proxy: 'localhost:8000',
     host: 'localhost',
     injectChanges: true,
     logSnippet: true,
     files: [
         'resources/templates/**/*.twig',
         'resources/js/**/*.jsx',
-        'public/assets/css/app.css',
-        'public/assets/js/**/*.js'
+        'web/assets/css/app.css',
+        'web/assets/js/**/*.js'
     ],
     port: 80
 })
