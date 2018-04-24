@@ -13,25 +13,6 @@ mix.extract([
 
 mix.setPublicPath(distPath);
 
-
-mix.options({
-    sourcemaps: 'source-map',
-    uglify: {
-        sourceMap: true,
-        uglifyOptions: {
-            sourceMap: true,
-            compress: {
-                warnings: false,
-                drop_console: true,
-            },
-            output: {
-                comments: false
-            }
-        }
-    }
-});
-
-
 mix
     .js(sourcePath + '/js/app.js', 'js')
     .sass(sourcePath + '/sass/app.scss', 'css')
@@ -70,10 +51,10 @@ mix.browserSync({
     injectChanges: true,
     logSnippet: true,
     files: [
-        'resources/templates/**/*.twig',
-        'resources/js/**/*.jsx',
-        'web/assets/css/app.css',
-        'web/assets/js/**/*.js'
+        'templates/**/*.twig',
+        sourcePath + '/js/**/*.jsx',
+        distPath + '/css/app.css',
+        distPath + '/assets/js/**/*.js'
     ],
     port: 80
 })
