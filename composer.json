@@ -24,12 +24,11 @@
         "craftcms/redactor": "^1.0",
         "charliedev/element-map": "^1.0",
         "mmikkel/cp-field-inspect": "^1.0",
-        "pennebaker/craft-architect": "^2.0",
         "nystudio107/craft-eagerbeaver": "^1.0",
-        "ether/seo": "^3.2",
         "ostark/upper": "^1.3",
         "aelvan/imager": "^2.0",
-        "clubstudioltd/craft-asset-rev": "^6.0"
+        "clubstudioltd/craft-asset-rev": "^6.0",
+        "doublesecretagency/craft-cpcss": "^2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

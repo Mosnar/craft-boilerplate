@@ -1,4 +1,5 @@
-let mix = require('laravel-mix')
+const mix = require('laravel-mix')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const sourcePath = 'resources/assets';
 const distPath = 'web/assets';
@@ -7,15 +8,16 @@ mix.extract([
         'jquery'
     ])
     .autoload({
-        jquery: ['$', 'window.jQuery',"jQuery","window.$","jquery","window.jquery"]
+        jquery: ['$', 'window.jQuery', "jQuery", "window.$", "jquery", "window.jquery"]
     });
 
 
 mix.setPublicPath(distPath);
 
 mix
-    .js(sourcePath + '/js/app.js', 'js')
-    .sass(sourcePath + '/sass/app.scss', 'css')
+    .js(sourcePath + '/js/app.js', distPath + '/js')
+    .sass(sourcePath + '/sass/app.scss', distPath + '/css')
+    .sass(sourcePath + '/sass/cp.scss', distPath + '/css')
     .options({
         processCssUrls: false
     })
@@ -24,20 +26,34 @@ mix
     .copyDirectory(sourcePath + '/fonts', distPath + '/fonts')
 
 
-if (mix.inProduction()) {
-    mix.webpackConfig({
-        module: {
-            rules: [{
+// Make sure we babelify proper modules and create font files
+mix.webpackConfig({
+    module: {
+        rules: [
+            {
                 test: /\.js?$/,
                 exclude: /node_modules\/(?!(foundation-sites)\/).*/,
-                use: [{
-                    loader: 'babel-loader',
-                    options: mix.config.babel()
-                }]
-            }]
-        }
-    })
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: mix.config.babel()
+                    }
+                ]
+            },
+            {
+                test: /\.font\.js/,
+                loader: ExtractTextPlugin.extract({
+                    use: [
+                        'css-loader',
+                        'webfonts-loader'
+                    ]
+                })
+            }
+        ]
+    }
+})
 
+if (mix.inProduction()) {
     mix.version()
 } else {
     mix.sourceMaps()

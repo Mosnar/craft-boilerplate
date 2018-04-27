@@ -11,7 +11,7 @@ Desktop.ini
 **/generated/_icons.sass
 npm-debug.log
 
-storage/*
 !storage/.gitkeep
 !storage/logs/php-fpm/.gitkeep
 .env.staging
+web/mix-manifest.json

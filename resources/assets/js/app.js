@@ -2,6 +2,9 @@ import $ from 'jquery'
 import whatInput from 'what-input'
 import * as components from './components'
 
+// Make sure our icon font gets compiled
+import './fonts/app.font'
+
 window.$ = $
 window.jQuery = $
 
