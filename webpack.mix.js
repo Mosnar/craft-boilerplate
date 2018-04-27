@@ -1,9 +1,13 @@
+// Configure these:
+const sourcePath = 'resources/assets'
+const publicPath = 'web'
+const distPath = 'web/assets'
+
 const mix = require('laravel-mix')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const sourcePath = 'resources/assets';
-const distPath = 'web/assets';
-
+// Extract jquery to the vendor.js file
+// Feel free to add any other vendor dependencies that are rarely updated
 mix.extract([
         'jquery'
     ])
@@ -15,13 +19,17 @@ mix.extract([
 mix.setPublicPath(distPath);
 
 mix
+    // Compile our main app entry point
     .js(sourcePath + '/js/app.js', distPath + '/js')
+    // Compile our main app styles
     .sass(sourcePath + '/sass/app.scss', distPath + '/css')
+    // Compile our cp styles
     .sass(sourcePath + '/sass/cp.scss', distPath + '/css')
     .options({
         processCssUrls: false
     })
 
+    // Copy over directory contents for images and fonts
     .copyDirectory(sourcePath + '/images', distPath + '/images')
     .copyDirectory(sourcePath + '/fonts', distPath + '/fonts')
 
@@ -53,6 +61,7 @@ mix.webpackConfig({
     }
 })
 
+// Create manifest file for production, sourcemaps for dev
 if (mix.inProduction()) {
     mix.version()
 } else {
